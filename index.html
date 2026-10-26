@@ -1,0 +1,110 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Management</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body { font-family: 'Montserrat', sans-serif; color: #333; background: #fff; }
+        header {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 24px 40px; max-width: 1280px; margin: 0 auto;
+        }
+        .logo { font-size: 30px; font-weight: 400; color: #aaa; font-style: italic; letter-spacing: -1px; }
+        nav { display: flex; gap: 36px; }
+        nav a { text-decoration: none; color: #333; font-size: 15px; font-weight: 400; transition: color 0.2s; }
+        nav a:hover { color: #000; }
+        .hero { text-align: center; padding: 50px 20px 30px; max-width: 750px; margin: 0 auto; }
+        .hero h1 { font-size: 52px; font-weight: 900; margin-bottom: 32px; color: #111; letter-spacing: -0.5px; line-height: 1.15; }
+        .hero p { font-size: 16px; line-height: 2; color: #444; max-width: 560px; margin: 0 auto 24px; font-weight: 400; }
+        .hero .image-link { font-size: 15px; color: #555; }
+        .hero .image-link a { color: #333; text-decoration: underline; text-underline-offset: 3px; }
+        .cards-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+            max-width: 1080px; margin: 40px auto 80px; padding: 0 20px;
+        }
+        .card {
+            position: relative; aspect-ratio: 1 / 1; overflow: hidden;
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 8px; /* Скругление углов для аккуратности */
+        }
+        .card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.15); }
+
+        .card-bg {
+            position: absolute; inset: 0;
+            background-size: cover; background-position: center;
+            z-index: 0; transition: transform 0.5s ease;
+        }
+        .card:hover .card-bg { transform: scale(1.06); }
+
+        .card-overlay { position: absolute; inset: 0; background: rgba(0, 0, 0, 0.45); z-index: 1; }
+
+        .card-title {
+            position: relative; z-index: 2; color: #fff; font-size: 20px; font-weight: 700;
+            letter-spacing: 3px; text-transform: uppercase; text-align: center; padding: 0 12px;
+        }
+        @media (max-width: 900px) {
+            .cards-grid { grid-template-columns: repeat(2, 1fr); }
+            header { padding: 20px 30px; }
+            .hero h1 { font-size: 38px; }
+        }
+        @media (max-width: 600px) {
+            .cards-grid { grid-template-columns: 1fr; }
+            header { padding: 16px 20px; flex-direction: column; gap: 16px; }
+            .hero h1 { font-size: 30px; }
+            nav { gap: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">logo</div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">About Company</a>
+        </nav>
+    </header>
+    
+    <section class="hero">
+        <h1>We'll help manage your business</h1>
+        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa.</p>
+        <div class="image-link">Images from <a href="https://unsplash.com" target="_blank" rel="noopener noreferrer">Unsplash</a></div>
+    </section>
+    
+    <section class="cards-grid" id="cards-grid">
+        <div class="card">
+            <div class="card-bg" style="background-image: url('https://avatars.mds.yandex.net/i?id=80f64ce2d4ce70c98886bfdbff98e502_l-3433069-images-thumbs&n=13');"></div>
+            <div class="card-overlay"></div>
+            <div class="card-title">Consultations</div>
+        </div>
+        <div class="card">
+            <div class="card-bg" style="background-image: url('https://avatars.mds.yandex.net/i?id=2583ac3f1ef104818cf47368358a3cf9_l-6467438-images-thumbs&n=13');"></div>
+            <div class="card-overlay"></div>
+            <div class="card-title">Strategy</div>
+        </div>
+        <div class="card">
+            <div class="card-bg" style="background-image: url('https://i.pinimg.com/originals/f5/3f/93/f53f93d0bf9ab8779cbdd3cae35fff0b.jpg');"></div>
+            <div class="card-overlay"></div>
+            <div class="card-title">Investment</div>
+        </div>
+        <div class="card">
+            <div class="card-bg" style="background-image: url('https://static.vecteezy.com/system/resources/thumbnails/017/185/757/small_2x/businessman-holding-digital-marketing-in-hand-with-icon-network-connection-technology-and-shopping-online-virtual-screen-photo.jpg');"></div>
+            <div class="card-overlay"></div>
+            <div class="card-title">Marketing</div>
+        </div>
+        <div class="card">
+            <div class="card-bg" style="background-image: url('https://img.magnific.com/premium-photo/woman-using-computer_53876-70731.jpg?semt=ais_hybrid');"></div>
+            <div class="card-overlay"></div>
+            <div class="card-title">Startups</div>
+        </div>
+        <div class="card">
+            <div class="card-bg" style="background-image: url('https://avatars.mds.yandex.net/i?id=37a605849bc037c2a94bb038e76061fb_l-5100139-images-thumbs&n=13');"></div>
+            <div class="card-overlay"></div>
+            <div class="card-title">Anti-Crisis</div>
+        </div>
+    </section>
+</body>
+</html>
